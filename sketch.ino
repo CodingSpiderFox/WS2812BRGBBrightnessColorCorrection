@@ -1,16 +1,3 @@
-// NeoPixelTest
-// This example will cycle between showing four pixels as Red, Green, Blue, White
-// and then showing those pixels as Black.
-//
-// Included but commented out are examples of configuring a NeoPixelBus for
-// different color order including an extra white channel, different data speeds, and
-// for Esp8266 different methods to send the data.
-// NOTE: You will need to make sure to pick the one for your platform 
-//
-//
-// There is serial output of the current state so you can confirm and follow along
-//
-
 #include <NeoPixelBus.h>
 
 const uint16_t PixelCount = 4; // this example assumes 4 pixels, making it smaller will cause a failure
@@ -22,40 +9,11 @@ const uint8_t PixelPin = 2;  // make sure to set this to the correct pin, ignore
 NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(PixelCount, PixelPin);
 //NeoPixelBus<NeoRgbFeature, Neo400KbpsMethod> strip(PixelCount, PixelPin);
 
-// For Esp8266, the Pin is omitted and it uses GPIO3 due to DMA hardware use.  
-// There are other Esp8266 alternative methods that provide more pin options, but also have
-// other side effects.
-//NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(PixelCount);
-//
-// NeoEsp8266Uart800KbpsMethod uses GPI02 instead
-
-// You can also use one of these for Esp8266, 
-// each having their own restrictions
-//
-// These two are the same as above as the DMA method is the default
-// NOTE: These will ignore the PIN and use GPI03 pin
-//NeoPixelBus<NeoGrbFeature, NeoEsp8266Dma800KbpsMethod> strip(PixelCount, PixelPin);
-//NeoPixelBus<NeoRgbFeature, NeoEsp8266Dma400KbpsMethod> strip(PixelCount, PixelPin);
-
-// Uart method is good for the Esp-01 or other pin restricted modules
-// NOTE: These will ignore the PIN and use GPI02 pin
-//NeoPixelBus<NeoGrbFeature, NeoEsp8266Uart800KbpsMethod> strip(PixelCount, PixelPin);
-//NeoPixelBus<NeoRgbFeature, NeoEsp8266Uart400KbpsMethod> strip(PixelCount, PixelPin);
-
-// The bitbang method is really only good if you are not using WiFi features of the ESP
-// It works with all but pin 16
-//NeoPixelBus<NeoGrbFeature, NeoEsp8266BitBang800KbpsMethod> strip(PixelCount, PixelPin);
-//NeoPixelBus<NeoRgbFeature, NeoEsp8266BitBang400KbpsMethod> strip(PixelCount, PixelPin);
-
-// four element pixels, RGBW
-//NeoPixelBus<NeoRgbwFeature, Neo800KbpsMethod> strip(PixelCount, PixelPin);
-
 RgbColor red(colorSaturation, 0, 0);
 RgbColor green(0, colorSaturation, 0);
 RgbColor blue(0, 0, colorSaturation);
 RgbColor white(colorSaturation);
 RgbColor black(0);
-
 
 //yellow
 RgbColor yellow0(255,215,0);
@@ -101,14 +59,12 @@ HslColor hslBlue(blue);
 HslColor hslWhite(white);
 HslColor hslBlack(black);
 
-
 void setup()
 {
     Serial.begin(115200);
     strip.Begin();
     strip.Show();
 }
-
 
 void loop()
 {
