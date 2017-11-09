@@ -13,7 +13,7 @@
 
 #include <NeoPixelBus.h>
 
-const uint16_t PixelCount = 1; // this example assumes 4 pixels, making it smaller will cause a failure
+const uint16_t PixelCount = 4; // this example assumes 4 pixels, making it smaller will cause a failure
 const uint8_t PixelPin = 2;  // make sure to set this to the correct pin, ignored for Esp8266
 
 #define colorSaturation 255
@@ -66,10 +66,7 @@ RgbColor yellow4(20,20,0);
 RgbColor yellow5(10,10,0);
 RgbColor yellow6(5,5,0);
 RgbColor yellow7(2,2,0);
-
 //orange
-
-
 RgbColor orange0(255,60,0);
 RgbColor orange1(210,48,0);
 RgbColor orange2(112,31,0);
@@ -78,16 +75,12 @@ RgbColor orange4(28,8,0);
 RgbColor orange5(20,5,0);
 RgbColor orange6(10,2,0);
 RgbColor orange7(8,2,0);
-
 //TODO mint green/pink
-
 //cyan
-
-
-RgbColor cyan0(0,255,215);
-RgbColor cyan1(0,200,160);
-RgbColor cyan2(0,98,80);
-RgbColor cyan3(0,60,50);
+RgbColor cyan0(0,250,210);
+RgbColor cyan1(0,195,155);
+RgbColor cyan2(0,96,77);
+RgbColor cyan3(0,58,47);
 RgbColor cyan4(0,20,20);
 RgbColor cyan5(0,10,10);
 RgbColor cyan6(0,5,5);
@@ -98,10 +91,9 @@ RgbColor r1(150,00,0);
 RgbColor r2(100,00,0);
 RgbColor r3(63,00,0);
 RgbColor r4(20,00,0);
-RgbColor r5(5,00,0);
-RgbColor r6(1,00,0);
-RgbColor r7(0,00,0);
-
+RgbColor r5(8,00,0);
+RgbColor r6(4,00,0);
+RgbColor r7(2,00,0);
 
 HslColor hslRed(red);
 HslColor hslGreen(green);
@@ -121,108 +113,173 @@ void setup()
 void loop()
 {
     strip.SetPixelColor(0, yellow0);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, yellow1);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, yellow2);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, yellow3);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, yellow4);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, yellow5);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, yellow6);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, yellow7);
-    delay(2000);
+    delay(1000);
     strip.Show();
 
 
     strip.SetPixelColor(0, orange0);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, orange1);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, orange2);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, orange3);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, orange4);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, orange5);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, orange6);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, orange7);
-    delay(2000);
+    delay(1000);
     strip.Show();
 
 
     strip.SetPixelColor(0, cyan0);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, cyan1);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, cyan2);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, cyan3);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, cyan4);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, cyan5);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, cyan6);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, cyan7);
-    delay(2000);
+    delay(1000);
     strip.Show();
 
 
     strip.SetPixelColor(0, r0);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, r1);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, r2);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, r3);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, r4);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, r5);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, r6);
-    delay(2000);
+    delay(1000);
     strip.Show();
     strip.SetPixelColor(0, r7);
-    delay(2000);
+    delay(1000);
     strip.Show();
 
-    delay(2000);
+    delay(1000);
 
+    //Test brightness of colors relative to each other (e.g. yellow vs. orange)
+
+    strip.SetPixelColor(0, yellow0);
+    strip.SetPixelColor(1, orange0);
+    strip.SetPixelColor(2, cyan0);
+    strip.SetPixelColor(3, r0);
+    delay(10000);
+    strip.Show();
+
+    strip.SetPixelColor(0, yellow1);
+    strip.SetPixelColor(1, orange1);
+    strip.SetPixelColor(2, cyan1);
+    strip.SetPixelColor(3, r1);
+    delay(10000);
+    strip.Show();
+
+    strip.SetPixelColor(0, yellow2);
+    strip.SetPixelColor(1, orange2);
+    strip.SetPixelColor(2, cyan2);
+    strip.SetPixelColor(3, r2);
+    delay(10000);
+    strip.Show();
+
+    strip.SetPixelColor(0, yellow3);
+    strip.SetPixelColor(1, orange3);
+    strip.SetPixelColor(2, cyan3);
+    strip.SetPixelColor(3, r3);
+    delay(10000);
+    strip.Show();
+
+    strip.SetPixelColor(0, yellow4);
+    strip.SetPixelColor(1, orange4);
+    strip.SetPixelColor(2, cyan4);
+    strip.SetPixelColor(3, r4);
+    delay(10000);
+    strip.Show();
+
+    strip.SetPixelColor(0, yellow5);
+    strip.SetPixelColor(1, orange5);
+    strip.SetPixelColor(2, cyan5);
+    strip.SetPixelColor(3, r5);
+    delay(10000);
+    strip.Show();
+
+    strip.SetPixelColor(0, yellow6);
+    strip.SetPixelColor(1, orange6);
+    strip.SetPixelColor(2, cyan6);
+    strip.SetPixelColor(3, r6);
+    delay(10000);
+    strip.Show();
+
+    strip.SetPixelColor(0, yellow7);
+    strip.SetPixelColor(1, orange7);
+    strip.SetPixelColor(2, cyan7);
+    strip.SetPixelColor(3, r7);
+    delay(10000);
+    strip.Show();
+
+    delay(10000);
+    strip.SetPixelColor(0, hslBlack);
+    strip.SetPixelColor(1, hslBlack);
+    strip.SetPixelColor(2, hslBlack);
+    strip.SetPixelColor(3, hslBlack);
+    strip.Show();
+    delay(1000);
 }
